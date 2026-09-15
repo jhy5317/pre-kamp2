@@ -1,0 +1,38 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# --- Virtual environment ---
+.venv/
+venv/
+env/
+
+# --- Data (raw / processed) ---
+dataset/
+data_processed/
+
+# --- Model artifacts ---
+checkpoints/
+*.joblib
+*.pkl
+*.h5
+*.pt
+*.ckpt
+
+# --- Generated outputs ---
+figures/
+
+# --- Logs ---
+install_log.txt
+*.log
+
+# --- Large reference docs ---
+*.pdf
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

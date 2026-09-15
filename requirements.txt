@@ -1,0 +1,21 @@
+# 열처리 공정최적화 AI 데이터셋 - 선형회귀 베이스라인 노트북 실행에 필요한 패키지 목록
+#
+# 설치 (기존 .venv 가상환경 활성화 후):
+#   pip install -r requirements.txt
+#
+# 참고: numpy 는 이미 requirements-windows.txt 에서 1.26.4 로 고정되어 있으므로
+#       동일 버전으로 맞춰 두었습니다 (버전 충돌 방지).
+
+numpy==1.26.4
+pandas==2.2.2
+scikit-learn==1.4.2
+matplotlib==3.8.4
+seaborn==0.13.2
+openpyxl==3.1.2       # label.xlsx (엑셀) 파일을 pandas 로 읽기 위해 필요
+joblib==1.4.2         # 모델 체크포인트 저장/불러오기
+tqdm==4.66.4          # 학습 진행상황(progress bar) 표시
+
+# 노트북 실행 환경 (이미 설치되어 있다면 생략 가능)
+jupyterlab==4.2.0
+ipykernel==6.29.4
+ipywidgets==8.1.2      # tqdm.auto 의 노트북 진행률 표시줄에 필요
