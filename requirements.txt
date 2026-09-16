@@ -15,6 +15,18 @@ openpyxl==3.1.2       # label.xlsx (엑셀) 파일을 pandas 로 읽기 위해 �
 joblib==1.4.2         # 모델 체크포인트 저장/불러오기
 tqdm==4.66.4          # 학습 진행상황(progress bar) 표시
 
+# 04_advanced_modeling.ipynb 전용 (RandomForest max_depth 튜닝 외 5개 개선사항)
+xgboost==2.1.1         # 정규화 내장 부스팅 모델
+lightgbm==4.5.0        # leaf-wise 부스팅 모델
+statsmodels==0.14.2    # VIF(분산팽창지수) 기반 다중공선성 재점검
+# statsmodels==0.14.2는 scipy 1.13 이상에서 깨진다 (scipy._lib._util._lazywhere가
+# 제거되어 statsmodels.api import 시 ImportError 발생 -- statsmodels.stats.
+# outliers_influence만 쓰는 compute_vif()는 이 경로를 타지 않아 문제없이 동작하지만,
+# statsmodels.api를 직접 쓰는 05_improved_modeling.ipynb의 레버리지(OLS) 분석에서는
+# 반드시 필요하다). scipy는 다른 패키지의 종속성으로 딸려 들어와 버전이 고정되어
+# 있지 않았기 때문에 이 버전을 명시적으로 고정한다.
+scipy==1.12.0           # statsmodels==0.14.2와 호환되는 상한 (1.13 이상 금지)
+
 # 노트북 실행 환경 (이미 설치되어 있다면 생략 가능)
 jupyterlab==4.2.0
 ipykernel==6.29.4
